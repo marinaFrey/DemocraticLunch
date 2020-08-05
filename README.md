@@ -1,5 +1,7 @@
 # Democratic Lunch
-Website for managing a poll of lunch options. 
+Website for managing a poll of lunch options. You can check a demonstration video [here](https://www.youtube.com/watch?v=aUAZUOpRpsM).
+
+![Democratic Lunch Interface](/images/interface.png)
 
 ## Features
 
