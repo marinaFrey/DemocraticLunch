@@ -1,0 +1,31 @@
+<mat-card>
+    <label id="voting-radio-group-label">
+        <h1>{{poll?.date | date:'fullDate'}}</h1>
+    </label>
+    <label id="voting-radio-group-label"><h2>Onde você quer almoçar?</h2></label>
+    <div *ngIf="poll && poll.options.length == 0">
+        <p>Parece que não há votos registrados ainda. <br/>
+        Utilize a entrada de texto abaixo para enviar a primeira opção!</p>
+    </div>
+    <mat-radio-group *ngIf="poll && poll.options" aria-labelledby="voting-radio-group-label" class="voting-radio-group"
+        [(ngModel)]="restaurantOption" name="restaurant_name">
+        <mat-radio-button class="voting-radio-button" name="restaurant_name" *ngFor="let option of poll.options"
+            [value]="option.restaurant">
+            {{option?.restaurant}}
+        </mat-radio-button>
+        <mat-radio-button value="other" class="voting-radio-button" name="restaurant_name">
+            <mat-form-field>
+                <input matInput placeholder="Outro" [(ngModel)]="customRestaurantName" (ngModelChange)="restaurantOption = 'other'"
+                    name="something">
+            </mat-form-field>
+        </mat-radio-button>
+    </mat-radio-group>
+    <button *ngIf="!userAlreadyVoted" mat-raised-button color="primary" (click)="submitVote()"> <mat-icon>how_to_vote</mat-icon>Votar</button>
+    <button *ngIf="userAlreadyVoted" mat-raised-button color="primary" (click)="submitVote()">
+        <mat-icon>how_to_vote</mat-icon> Alterar meu Voto
+    </button>
+
+    <div *ngIf="successMess" class="success"> {{successMess}} </div>
+    <div *ngIf="errMess" class="error"> {{errMess}} </div>
+</mat-card>
+

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"lunchPicker.polls"},{"v":{"$numberInt":"2"},"unique":true,"key":{"date":{"$numberInt":"1"}},"name":"date_1","ns":"lunchPicker.polls","background":true}],"uuid":"f7c69d8b01a84fc28eb9b9670c20b4d4"}

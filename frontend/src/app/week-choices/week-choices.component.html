@@ -1,0 +1,24 @@
+<div class="week-choices">
+    <h1>Votações da Semana</h1>
+
+    <div *ngIf="!parsedPolls && parsedPolls?.length === 0">
+        <p>Parece que ainda nenhuma votação foi realizada essa semana. <br />
+            Aproveite para selecionar qualquer restaurante que quiser!</p>
+    </div>
+
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let poll of parsedPolls; let i = index" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                   {{poll.date | date:'EEEE'}}
+                </mat-panel-title>
+                <mat-panel-description>
+                     {{poll.restaurant}} 
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-poll-chart [poll]="polls[i]" [isOngoing]="false"></app-poll-chart>
+            
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

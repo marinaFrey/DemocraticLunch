@@ -1,0 +1,30 @@
+
+.task-header {
+    background-color: transparent;
+    padding: 0 5px;
+     height: 20px;
+}
+.fx-spacer {
+    flex: 1 1 auto;
+}
+
+.lockHeader {
+    width: 100%;
+   text-align:center;
+}
+
+.lockIconButton {
+    cursor: default;
+}
+
+.errorMessage {
+    color: rgb(172, 16, 16);
+}
+
+.loginButton {
+    width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}

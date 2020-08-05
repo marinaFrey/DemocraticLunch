@@ -1,0 +1,13 @@
+<div class="main-div">
+    <div *ngIf="polls$ | async as polls; else loading" fxLayout="row wrap" fxLayoutAlign="center center"
+        fxFlex="100">
+        <h1>Votação de Hoje</h1>
+        <app-voting [poll]="getTodaysPoll(polls)"></app-voting>
+        <app-poll-chart [poll]="getTodaysPoll(polls)" [isOngoing]="true"></app-poll-chart>
+        <app-week-choices [polls]="polls" ></app-week-choices>
+    </div>
+
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+</div>

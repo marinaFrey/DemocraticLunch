@@ -1,0 +1,58 @@
+<h4 mat-dialog-title>
+    <mat-toolbar role="toolbar" class="task-header">
+        <span id="loginTitle">Cadastre-se</span>
+        <span class="fx-spacer"></span>
+        <button mat-icon-button mat-dialog-close>
+            <mat-icon mat-list-icon>close</mat-icon>
+        </button>
+    </mat-toolbar>
+</h4>
+
+<h1 class="lockHeader">
+    <button mat-fab class="lockIconButton" [disableRipple]="true" color="primary" aria-label="Login">
+        <mat-icon>person_add_alt_1</mat-icon>
+    </button>
+
+</h1>
+
+<div *ngIf="errMess">
+    <a class="errorMessage">{{errMess}}</a>
+</div>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+    <mat-dialog-content>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Nome de Usuário" type="text" formControlName="username">
+                <mat-error *ngIf="signupForm.get('username').hasError('required')">Por favor preencha seu nome de usuário
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Nome" type="text" formControlName="firstname">
+                <mat-error *ngIf="signupForm.get('firstname').hasError('required')">Por favor preencha seu nome
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Sobrenome" type="text" formControlName="lastname">
+                <mat-error *ngIf="signupForm.get('lastname').hasError('required')">Por favor preencha seu sobrenome
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Senha" type="password" formControlName="password">
+                <mat-error *ngIf="signupForm.get('password').hasError('required')">Por favor preencha sua senha
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Confirme sua Senha" type="password" formControlName="confirmPassword">
+                <mat-error *ngIf="signupForm.get('confirmPassword').hasError('required')">Por favor confirme sua senha
+                </mat-error>
+            </mat-form-field>
+        </p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button type="submit" mat-button mat-flat-button class="loginButton" color="primary"
+            [disabled]="signupForm.invalid">Entrar</button>
+    </mat-dialog-actions>
+
+</form>

@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span> <mat-icon>gavel</mat-icon>Almoço Democrático</span>
+        <span class="spacer"></span>
+        <button *ngIf="!username" (click)="openSignUpForm()" mat-icon-button aria-label="cadastre-se">
+            <mat-icon>person_add_alt_1</mat-icon>
+        </button>
+        <button *ngIf="!username" class="toolbarButton" (click)="openLoginForm()" mat-button aria-label="entrar">
+            <mat-icon>login</mat-icon> Entrar
+        </button>
+        <a *ngIf="username" class="username">{{username}}</a>
+        <button *ngIf="username" class="toolbarButton" (click)="logOut()" mat-button aria-label="sair">
+            <mat-icon>logout</mat-icon> Sair
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

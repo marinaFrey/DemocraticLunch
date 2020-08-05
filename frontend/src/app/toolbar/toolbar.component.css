@@ -1,0 +1,11 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.username {
+    margin: 10px;
+}
+
+.toolbarButton {
+    margin-right: 30px;
+}
